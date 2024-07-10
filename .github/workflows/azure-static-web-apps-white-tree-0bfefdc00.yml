@@ -21,7 +21,7 @@ jobs:
           lfs: false
       - name: Create .env file
         env:
-          DOTENV: ${{ secrets.DEVAPLHA_SECRET }}
+          DOTENV: ${{ secrets.DEVALPHA_SECRET }}
         run: |
           echo "$DOTENV" > .env
       - name: Build And Deploy
