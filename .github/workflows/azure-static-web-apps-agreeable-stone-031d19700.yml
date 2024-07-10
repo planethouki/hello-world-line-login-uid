@@ -22,7 +22,7 @@ jobs:
       - name: Create .env file
         run: |
           echo ${{ secrets.DEV1_SECRET }} > .env
-          ls -l
+          ls -la
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
