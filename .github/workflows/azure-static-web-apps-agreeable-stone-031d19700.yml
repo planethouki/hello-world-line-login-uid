@@ -20,8 +20,10 @@ jobs:
           submodules: true
           lfs: false
       - name: Create .env file
+        env:
+          DEV1_SECRET: ${{ secrets.DEV1_SECRET }}
         run: |
-          echo ${{ secrets.DEV1_SECRET }} > .env
+          echo "$DEV1_SECRET" > .env
           ls -la
       - name: Build And Deploy
         id: builddeploy
