@@ -20,8 +20,10 @@ jobs:
           submodules: true
           lfs: false
       - name: Create .env file
+        env:
+          DOTENV: ${{ secrets.BETAZONE_SECRET }}
         run: |
-          echo ${{ secrets.BETAZONE_SECRET }} > .env
+          echo "$DOTENV" > .env
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

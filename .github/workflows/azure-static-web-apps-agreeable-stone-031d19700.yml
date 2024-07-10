@@ -21,10 +21,9 @@ jobs:
           lfs: false
       - name: Create .env file
         env:
-          DEV1_SECRET: ${{ secrets.DEV1_SECRET }}
+          DOTENV: ${{ secrets.DEV1_SECRET }}
         run: |
-          echo "$DEV1_SECRET" > .env
-          ls -la
+          echo "$DOTENV" > .env
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
