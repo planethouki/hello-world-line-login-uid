@@ -9,6 +9,9 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "dependencies": {
     "@line/bot-sdk": "^9.2.2",
     "react": "^18.2.0",
