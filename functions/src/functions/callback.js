@@ -26,14 +26,20 @@ app.http('client', {
         body: data
       }).then(res => res.json());
 
-      // const accessToken = tokenResponse.data.access_token;
+      const accessToken = tokenResponse.access_token;
 
-      // const profileResponse = await fetch('https://api.line.me/v2/profile', {
-      //   headers: { Authorization: `Bearer ${accessToken}` }
-      // }).then(res => res.json());
+      const profileResponse = await fetch('https://api.line.me/v2/profile', {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      }).then(res => res.json());
 
       return {
-        body: JSON.stringify(tokenResponse)
+        body: JSON.stringify({
+          token: tokenResponse,
+          profile: profileResponse,
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }
 
     } catch (error) {
