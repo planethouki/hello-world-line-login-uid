@@ -33,7 +33,7 @@ app.http('client', {
       // }).then(res => res.json());
 
       return {
-        body: tokenResponse
+        body: JSON.stringify(tokenResponse)
       }
 
     } catch (error) {
