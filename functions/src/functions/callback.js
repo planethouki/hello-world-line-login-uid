@@ -17,7 +17,7 @@ app.http('client', {
       const data = new URLSearchParams();
       data.append('grant_type', 'authorization_code');
       data.append('code', code);
-      data.append('redirect_uri', `${process.env.LINE_CALLBACK_URL}/api/line/callback`);
+      data.append('redirect_uri', process.env.LINE_CALLBACK_URL);
       data.append('client_id', process.env.LINE_CHANNEL_ID);
       data.append('client_secret', process.env.LINE_CHANNEL_SECRET);
 
